@@ -51,3 +51,19 @@ logoNavbarBrand.addEventListener("click", () => {
 })
 
 logoNavbarBrand.click()
+
+    class HeaderComponent extends HTMLElement {
+  connectedCallback() {
+    const titulo = this.getAttribute("titulo");
+
+    this.innerHTML = `
+      <header class="page-header">
+        <div class="container">
+          <h1>${titulo}</h1>
+        </div>
+      </header>
+    `;
+  }
+}
+
+customElements.define("header-component", HeaderComponent);
